@@ -11,9 +11,19 @@
 |
 */
 
-Route::get('/{any}', function () {
-    return view('welcome');
-})->where('any','.*');
+Route::get('/{any?}', function ($any='') {
+
+    if ($any == 'login') {
+            return view('auth.login');
+       }
+    elseif ($any == 'register') {
+        return view('auth.register');
+    }
+    else{
+        return view('welcome');
+    }
+
+});
 
 Auth::routes();
 
