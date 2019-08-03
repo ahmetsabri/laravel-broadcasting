@@ -13,7 +13,8 @@
 
 Route::get('/{any?}', function ($any='') {
 
-    if ($any == 'login') {
+    if ($any == 'login') { 
+        
             return view('auth.login');
        }
     elseif ($any == 'register') {
